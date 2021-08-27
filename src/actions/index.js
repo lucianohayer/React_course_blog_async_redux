@@ -3,7 +3,8 @@ import jsonPlaceholder from '../apis/jsonPlaceholder';
 export const fetchPosts = () => async (dispatch) => {
 	let posts = [];
 	try {
-		posts = await jsonPlaceholder.get('/posts');
+		const response = await jsonPlaceholder.get('/posts');
+		posts = response.data;
 	} catch (err) {
 		console.error(err);
 	}
